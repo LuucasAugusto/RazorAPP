@@ -1,35 +1,26 @@
 ﻿@page
 @model IndexModel
+@{
+    Layout = "Shared/_Layout";
+}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-    <div>
-        <partial name="Shared/NavMenuPartial" />
-        <h1>Categorias</h1>
-        <table>
-            <thead>
-                <tr>
-                    <td>ID</td>
-                    <td>Title</td>
-                    <td>Price</td>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var category in Model.Categories)
-                {
-                    <tr>
-                        <td>@category.id</td>
-                        <td>@category.title</td>
-                        <td>@category.price.ToString("C")</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-</body>
-</html>
+<h1>Categorias</h1>
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Title</td>
+            <td>Price</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model.Categories)
+        {
+            <tr>
+                <td>@category.id</td>
+                <td>@category.title</td>
+                <td>@category.price.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
